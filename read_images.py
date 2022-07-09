@@ -11,6 +11,8 @@ def walk(folder):
         # curr_family = re.split('/|\\\\', dirpath)[-1]
         return [f"{folder}\{file}" for file in files if fnmatch(file, "*.jpg")]
 
+# https://stackoverflow.com/questions/44650888/resize-an-image-without-distortion-opencv
+# This site also gave suggestions on padding to keep size constant
 def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
     # initialize the dimensions of the image to be resized and
     # grab the image size
